@@ -7,5 +7,6 @@ def add_newline(list: list[str]):
 
 
 def append_list_to_textfile(text: list[str], filepath: str):
+    text_new = add_newline(text)
     with open(filepath, mode='a') as f:
-        f.writelines(text) #TODO: find a way to add a new line automatically when appending text 
+        f.writelines(text_new)  
