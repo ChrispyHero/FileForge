@@ -1,5 +1,5 @@
 
-
+# Takes list as a parameter because the program stores parameters for "-q" in a list
 def add_newline(list: list[str]): 
     for i in range(0, len(list)): 
         list[i] = list[i] + "\n"
