@@ -2,6 +2,9 @@ import json
 import sys
 
 def load_data_from_json(file_path:str):
+    """
+    Returns the json parsed from a json file
+    """
     try: 
         with open(file_path) as file:
             json_data = json.load(file)

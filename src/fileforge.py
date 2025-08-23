@@ -1,6 +1,8 @@
 import argparse
 import sys 
 import textwrap
+from pathlib import Path
+import data
 
 
 def parse() -> argparse.Namespace: 
@@ -45,6 +47,11 @@ def main(args: argparse.Namespace):
     if args.quick is not None:
         print("Your input:", args.quick)
 
+        # Getting the target_file_path
+        abs_path = Path(__file__).resolve()
+        json_data_path = abs_path.parents[1] / "data.json"
+        json_data = data.load_data_from_json(str(json_data_path))
+        target_file_path = data.load_target_file_path(json_data)
 
 if __name__ == "__main__":
     args = parse()
