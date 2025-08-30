@@ -1,8 +1,8 @@
 import argparse
 import sys 
 import textwrap
-
-
+from data import *
+from append import *
 
 
 def parse() -> argparse.Namespace: 
@@ -46,7 +46,8 @@ def main(args: argparse.Namespace):
     """
     if args.quick is not None:
         print("Your input:", args.quick)
-
+        target_file_path = load_target_file_path()
+        append_list_to_textfile(text=args.quick, filepath=target_file_path)
         
 
 if __name__ == "__main__":
