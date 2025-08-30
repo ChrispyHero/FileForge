@@ -1,5 +1,5 @@
 
-# Takes list as a parameter because the program stores parameters for "-q" in a list
+
 def _add_newline(text: list[str]): 
     for i in range(0, len(text)): 
         text[i] = text[i] + "\n"
@@ -7,6 +7,11 @@ def _add_newline(text: list[str]):
 
 
 def append_list_to_textfile(text: list[str], filepath: str):
+    """
+    Takes list as a parameter because the program stores everything in a list,
+    even if the user only inputs one line of text
+    Improving reusability of this function
+    """
     text_new = _add_newline(text)
     try:
         with open(filepath, mode='a') as f:
