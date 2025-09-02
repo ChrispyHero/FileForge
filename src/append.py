@@ -17,4 +17,4 @@ def append_list_to_textfile(text: list[str], filepath: str):
         with open(filepath, mode='a') as f:
             f.writelines(text_new)  
     except FileNotFoundError as e: 
-        print(f"There is a problem with the json file: {e}")
+        print(f"There is a problem with the file: {e}")
